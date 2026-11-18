@@ -2,6 +2,8 @@
 
 Front-end for creating contracts from templates and sending them for signature.
 
+Repository: https://github.com/sowrup24/SELISE-Legal-Templates-2.0
+
 ## What is here
 
 | Folder | What it is |
@@ -14,7 +16,8 @@ Front-end for creating contracts from templates and sending them for signature.
 Needs Node 20 or later.
 
 ```bash
-cd app
+git clone https://github.com/sowrup24/SELISE-Legal-Templates-2.0.git
+cd SELISE-Legal-Templates-2.0/app
 npm install
 npm run dev
 ```
