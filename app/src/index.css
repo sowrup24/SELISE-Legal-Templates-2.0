@@ -1,0 +1,214 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/source-serif-4";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    /* Contract paper uses a serif, like the prototype's A4 page */
+    --font-serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
+    --font-sans: 'Inter Variable', Inter, system-ui, sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    /* SELISE text, surface and stat colours (not part of stock shadcn) */
+    --color-heading: var(--heading);
+    --color-subtle-foreground: var(--subtle-foreground);
+    --color-placeholder: var(--placeholder);
+    --color-table-header: var(--table-header);
+    --color-canvas: var(--canvas);
+    --color-dot: var(--dot);
+    --color-inverse: var(--inverse);
+    --color-inverse-foreground: var(--inverse-foreground);
+    --color-selected: var(--selected);
+    --color-border-subtle: var(--border-subtle);
+    --color-stat-warning: var(--stat-warning);
+    --color-stat-info: var(--stat-info);
+    --color-stat-neutral: var(--stat-neutral);
+    --color-stat-success: var(--stat-success);
+    /* SELISE status colours (not part of stock shadcn) */
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+    --color-alert: var(--alert);
+    --color-alert-foreground: var(--alert-foreground);
+    --color-danger: var(--danger);
+    --color-danger-foreground: var(--danger-foreground);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Theme values come from the SELISE Legal Templates tokens (preview/new-contract-flow.html).
+   Brand primary #008af1 (dark #1a8cf0) is fixed: do not retune it. */
+:root {
+    --heading: #131314;
+    --subtle-foreground: #4d5052;
+    --placeholder: #909599;
+    --table-header: #fbfbfb;
+    --canvas: #F8FAFB;
+    --dot: #c7e1fb;
+    --inverse: #131314;
+    --inverse-foreground: #ffffff;
+    --scrollbar: #CBD3D8;
+    --selected: #f0f6fc;
+    --border-subtle: #e7edf1;
+    --stat-warning: #ff7803;
+    --stat-info: #008af1;
+    --stat-neutral: #303233;
+    --stat-success: #00a671;
+    --background: #ffffff;
+    --foreground: #303233;
+    --card: #ffffff;
+    --card-foreground: #303233;
+    --popover: #ffffff;
+    --popover-foreground: #303233;
+    --primary: #008af1;
+    --primary-foreground: #ffffff;
+    --secondary: #e7edf1;
+    --secondary-foreground: #303233;
+    --muted: #f8fafb;
+    --muted-foreground: #696d70;
+    --accent: #f6f9fb;
+    --accent-foreground: #131314;
+    --destructive: #c9362b;
+    --border: #d8e1e8;
+    --input: #d8e1e8;
+    --ring: #008af1;
+    --chart-1: #008af1;
+    --chart-2: #00a671;
+    --chart-3: #ff7803;
+    --chart-4: #303233;
+    --chart-5: #f4a100;
+    --radius: 0.5rem;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #303233;
+    --sidebar-primary: #008af1;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f0f6fc;
+    --sidebar-accent-foreground: #008af1;
+    --sidebar-border: #e7edf1;
+    --sidebar-ring: #008af1;
+    --success: #e5fbef;
+    --success-foreground: #008043;
+    --warning: #ffefe3;
+    --warning-foreground: #b54d00;
+    --info: #ebf4ff;
+    --info-foreground: #0068e2;
+    --alert: #fff8e4;
+    --alert-foreground: #9b6600;
+    --danger: #fef1f1;
+    --danger-foreground: #d91919;
+}
+
+.dark {
+    --heading: #f2f4f5;
+    --subtle-foreground: #b4bcc2;
+    --placeholder: #6c757b;
+    --table-header: #1a1f22;
+    --canvas: #0b0e10;
+    --dot: #24425e;
+    --inverse: #e9edf0;
+    --inverse-foreground: #131314;
+    --scrollbar: #3a4349;
+    --selected: #122a40;
+    --border-subtle: #262d32;
+    --stat-warning: #ff9a3d;
+    --stat-info: #4aaef7;
+    --stat-neutral: #dde2e5;
+    --stat-success: #2ec48f;
+    --background: #0f1214;
+    --foreground: #dde2e5;
+    --card: #171b1e;
+    --card-foreground: #dde2e5;
+    --popover: #171b1e;
+    --popover-foreground: #dde2e5;
+    --primary: #1a8cf0;
+    --primary-foreground: #ffffff;
+    --secondary: #262c30;
+    --secondary-foreground: #dde2e5;
+    --muted: #1b2023;
+    --muted-foreground: #8f989e;
+    --accent: #1f2529;
+    --accent-foreground: #f2f4f5;
+    --destructive: #c9362b;
+    --border: #343c42;
+    --input: #343c42;
+    --ring: #3a9ff3;
+    --chart-1: #4aaef7;
+    --chart-2: #2ec48f;
+    --chart-3: #ff9a3d;
+    --chart-4: #dde2e5;
+    --chart-5: #f5c04a;
+    --sidebar: #171b1e;
+    --sidebar-foreground: #dde2e5;
+    --sidebar-primary: #1a8cf0;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #122a40;
+    --sidebar-accent-foreground: #4aaef7;
+    --sidebar-border: #262d32;
+    --sidebar-ring: #3a9ff3;
+    --success: #12352a;
+    --success-foreground: #2fcb8e;
+    --warning: #3d2614;
+    --warning-foreground: #ff9a3d;
+    --info: #122a40;
+    --info-foreground: #5cb2ff;
+    --alert: #3a3118;
+    --alert-foreground: #f5c04a;
+    --danger: #3a1715;
+    --danger-foreground: #ff6b61;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+    }
+  html {
+    @apply font-sans;
+    }
+}

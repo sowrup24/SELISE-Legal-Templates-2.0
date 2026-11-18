@@ -1,0 +1,13 @@
+# Dependencies and build output
+node_modules/
+dist/
+*.log
+
+# Local tooling and personal files (not part of the project)
+.DS_Store
+.agents/
+.claude/
+skills-lock.json
+*.zip
+*.docx
+.env*
